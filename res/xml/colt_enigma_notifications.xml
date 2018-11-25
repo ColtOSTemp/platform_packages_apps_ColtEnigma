@@ -42,23 +42,29 @@
             android:summary="@string/less_boring_heads_up_summary"
             android:defaultValue="false" />
 
-    <com.colt.enigma.preference.SystemSettingSwitchPreference 
-        android:key="notification_sound_vib_screen_on" 
-        android:title="@string/notification_sound_vib_screen_on_title" 
-        android:summary="@string/notification_sound_vib_screen_on_summary"
-        android:defaultValue="true" />
+        <com.colt.enigma.preference.SystemSettingSwitchPreference 
+            android:key="notification_sound_vib_screen_on" 
+            android:title="@string/notification_sound_vib_screen_on_title" 
+            android:summary="@string/notification_sound_vib_screen_on_summary"
+            android:defaultValue="true" />
 
-    <com.colt.enigma.preference.SystemSettingSwitchPreference 
-        android:key="notification_headers" 
-        android:title="@string/notification_headers_title" 
-        android:summary="@string/notification_headers_summary"
-        android:defaultValue="true" />
+        <com.colt.enigma.preference.SystemSettingSwitchPreference 
+            android:key="notification_headers" 
+            android:title="@string/notification_headers_title" 
+            android:summary="@string/notification_headers_summary"
+            android:defaultValue="true" />
 
-    <com.colt.enigma.preference.SystemSettingSwitchPreference
-        android:key="center_notification_headers"
-        android:title="@string/center_notification_headers_title"
-        android:summary="@string/center_notification_headers_summary"
-        android:dependency="notification_headers"
-        android:defaultValue="false" />
+        <com.colt.enigma.preference.SystemSettingSwitchPreference
+            android:key="center_notification_headers"
+            android:title="@string/center_notification_headers_title"
+            android:summary="@string/center_notification_headers_summary"
+            android:dependency="notification_headers"
+            android:defaultValue="false" />
+
+	<com.colt.enigma.preference.SystemSettingSwitchPreference 
+            android:key="notification_guts_kill_app_button" 
+            android:title="@string/notification_guts_kill_app_button_title" 
+            android:summary="@string/notification_guts_kill_app_button_summary"
+            android:defaultValue="false" />
 
 </PreferenceScreen>
