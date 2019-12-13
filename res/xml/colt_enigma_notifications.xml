@@ -61,6 +61,12 @@
         android:dependency="notification_headers"
         android:defaultValue="false" />
 
+    <com.colt.enigma.preference.SystemSettingSwitchPreference
+        android:key="hide_smart_replies"
+        android:title="@string/hide_smart_replies_title"
+        android:summary="@string/hide_smart_replies_summary"
+        android:defaultValue="false"/>
+
     <PreferenceCategory
         android:key="pulse_ambient_light_category"
         android:title="@string/pulse_ambient_light_category" >
