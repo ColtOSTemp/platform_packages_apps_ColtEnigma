@@ -61,4 +61,7 @@
 
     <color name="disabled_text_color">#66000000</color>
 
+    <!-- FOD icon picker-->
+    <color name="fod_item_background_stroke_color">#d6d6d6</color>
+
 </resources> 
