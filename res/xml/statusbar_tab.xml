@@ -28,6 +28,14 @@
             android:fragment="com.colt.enigma.fragments.StatusBarSettings"
 	    android:summary="@string/statusbar_summary" />
 
+	<!-- Battery Styles -->
+        <com.colt.enigma.preference.CategoryColtPreference
+            android:key="statusbar_battery"
+            android:title="@string/battery_percent_title"
+            android:summary="@string/battery_percent_summary"
+	    android:icon="@drawable/ic_battery_background"
+            android:fragment="com.colt.enigma.fragments.StatusbarBatterySettings"/>
+
         <!-- Quick Settings -->
         <com.colt.enigma.preference.CategoryColtPreference
 	    android:key="quicksettings_category"
