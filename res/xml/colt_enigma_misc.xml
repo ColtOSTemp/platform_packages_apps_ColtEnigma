@@ -21,4 +21,11 @@
             android:summary="@string/allow_signature_fake_summary"
             android:defaultValue="false" />
 
+    <!-- Pulse -->
+    <Preference
+        android:key="pulse"
+        android:title="@string/pulse_settings"
+        android:summary="@string/pulse_settings_summary"
+        android:fragment="com.colt.enigma.fragments.PulseSettings" />
+
 </PreferenceScreen>
