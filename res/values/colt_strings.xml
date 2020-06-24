@@ -1152,4 +1152,7 @@
     <string name="switch_contained">Contained</string>
     <string name="switch_telegram">Telegram</string>
 
+    <!-- Customization titles -->
+    <string name="themes_ui">ColtOS Themes UI</string>
+    <string name="theme_customization_sysui_icon_title">Statusbar icon</string>
 </resources>
