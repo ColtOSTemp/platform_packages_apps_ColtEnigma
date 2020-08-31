@@ -41,6 +41,9 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.internal.widget.LockPatternUtils;
+import com.colt.enigma.preference.SystemSettingSwitchPreference;
+
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 import android.provider.SearchIndexableResource;
@@ -51,14 +54,29 @@ import java.util.List;
 public class LockScreenSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String FP_KEYSTORE = "fp_unlock_keystore";
+
+    private SystemSettingSwitchPreference mFingerprintUnlock;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.x_settings_lockscreen);
+        addPreferencesFromResource(R.xml.colt_enigma_lockscreen);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         Resources resources = getResources();
 
+        mFingerprintUnlock = (SystemSettingSwitchPreference) findPreference(FP_KEYSTORE);
+
+        if (mFingerprintUnlock != null) {
+           if (LockPatternUtils.isDeviceEncryptionEnabled()) {
+               mFingerprintUnlock.setEnabled(false);
+               mFingerprintUnlock.setSummary(R.string.fp_encrypt_warning);
+            } else {
+               mFingerprintUnlock.setEnabled(true);
+               mFingerprintUnlock.setSummary(R.string.fp_unlock_keystore_summary);
+            }
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -84,7 +102,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.x_settings_lockscreen;
+                    sir.xmlResId = R.xml.colt_enigma_lockscreen;
                     result.add(sir);
                     return result;
                 }
