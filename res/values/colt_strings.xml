@@ -487,4 +487,8 @@
     <string name="lock_item_right">Right alligned</string>
     <string name="lockscreen_item_padding_title">Lockscreen items padding</string>
 
+    <!-- SmartSpace -->
+    <string name="smart_space_title">SmartSpace</string>
+    <string name="smart_space_summary">Display conditional info such as weather and events on lockscreen\nRequires a SystemUI restart</string>
+
 </resources>
