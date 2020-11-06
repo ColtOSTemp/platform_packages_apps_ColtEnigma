@@ -782,4 +782,10 @@
     <string name="qs_datausage_daily">Daily usage</string>
     <string name="qs_datausage_monthly">Monthly usage</string>
 
+    <!-- QuickSettings general category -->
+    <string name="quick_settings_general_category_title">General</string>
+
+    <!-- QS tiles title -->
+    <string name="qs_tile_title_visibility_title">Show QS tiles title</string>
+
 </resources>
