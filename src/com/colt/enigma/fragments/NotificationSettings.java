@@ -41,14 +41,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.android.internal.util.colt.ColtUtils;
+import com.colt.enigma.preference.SystemSettingSwitchPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class NotificationSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
+    private static final String NOTIFICATION_HEADERS = "notification_headers";
 
     private Preference mChargingLeds;
+    private SystemSettingSwitchPreference mNotificationHeader;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -69,10 +72,22 @@ public class NotificationSettings extends SettingsPreferenceFragment implements
         if (!ColtUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(incallVibCategory);
         }
+
+        mNotificationHeader = findPreference(NOTIFICATION_HEADERS);
+        mNotificationHeader.setChecked((Settings.System.getInt(resolver,
+                Settings.System.NOTIFICATION_HEADERS, 1) == 1));
+        mNotificationHeader.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mNotificationHeader) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.NOTIFICATION_HEADERS, value ? 1 : 0);
+            EvolutionUtils.showSystemUiRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
