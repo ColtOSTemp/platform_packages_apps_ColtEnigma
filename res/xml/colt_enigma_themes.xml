@@ -54,6 +54,17 @@
 	android:icon="@drawable/ic_stat_icons"
         android:title="@string/theme_customization_sysui_icon_title"/>
 
+    <Preference
+        android:key="clock_style"
+        android:title="@string/clock_style_title"
+        android:summary="@string/clock_style_summary"
+        android:icon="@drawable/ic_settings_clockstyle">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.android.wallpaper"
+            android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
+    </Preference>
+
     <ListPreference
 	android:layout="@layout/fonts_base_preview"
         android:selectable="false" />
