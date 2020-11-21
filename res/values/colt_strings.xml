@@ -257,6 +257,8 @@
     <string name="themes_summary">Theming section</string>
     <string name="accent_color">Accent color - RGB picker</string>
     <string name="accent_summary">Choose your own accent!</string>
+    <string name="clock_style_title">Lockscreen lock</string>
+    <string name="clock_style_summary">Customize your lockscreen clock</string>
 
     <!-- Power Menu -->
     <string name="power_button_category_title">Power Button</string>
