@@ -56,9 +56,10 @@
 
     <com.colt.enigma.preference.SystemSettingSwitchPreference
          android:key="qs_datausage" 
-         android:title="@string/qs_datausage_title" 
-         android:summary="@string/qs_datausage_subtitle" 
-         android:defaultValue="false" />
+	 android:title="@string/qs_datausage_title"
+         android:entries="@array/qs_datausage_entries"
+         android:entryValues="@array/qs_datausage_values"
+         android:defaultValue="0" />
 
     <PreferenceCategory
         android:key="qs_columns_rows_category"

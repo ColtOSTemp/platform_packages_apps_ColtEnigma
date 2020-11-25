@@ -839,7 +839,10 @@
     <string name="panel_kece">Kece</string>
     <string name="panel_outline">Outline</string>
 
-    <!-- QS DataUsage Toggle -->
-    <string name="qs_datausage_title">Show data usage in qs header</string>
-    <string name="qs_datausage_subtitle">Shows data usage in quick settings header of sim used for data</string>
+    <!-- QS Header data uasge -->
+    <string name="qs_datausage_title">Data usage in QS Header</string>
+    <string name="qs_datausage_disabled">Disabled</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
+    
 </resources>
