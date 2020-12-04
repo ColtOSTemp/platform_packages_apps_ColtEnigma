@@ -743,6 +743,7 @@
     <string name="pulse_ambient_light_title">Show on new notifcation</string>
     <string name="pulse_ambient_light_summary">Show light pulse on new notification</string>
     <string name="ambient_notification_light_enabled_title">Show on always on</string>
+    <string name="aod_disabled">AOD is disabled</string>
     <string name="ambient_notification_light_enabled_summary">Show light pulse on new notification using always on</string>
     <string name="ambient_notification_light_color_title">Custom color</string>
     <string name="ambient_notification_light_color_summary">Default color for light pulse</string>
@@ -769,4 +770,5 @@
     <string name="aggressive_idle_summary">Reduce device wake ups and reduce the time required to enter idle state</string>
     <string name="aggressive_standby_title">Aggressive standby</string>
     <string name="aggressive_standby_summary">Restrict apps from running in background</string>
+
 </resources>
