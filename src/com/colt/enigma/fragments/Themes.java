@@ -67,7 +67,7 @@ import android.app.UiModeManager;
     private static final int MENU_RESET = Menu.FIRST;
     private static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
     private static final String UI_STYLE = "ui_style";
-
+    private static final String PREF_PANEL_BG = "panel_bg";
 
     static final int DEFAULT = 0xff1a73e8;
 
@@ -79,6 +79,7 @@ import android.app.UiModeManager;
     private ListPreference mThemeSwitch;
     private ListPreference mBrightnessSliderStyle;
     private ListPreference mUIStyle;
+    private ListPreference mPanelBg;
 
     @Override
     protected String getLogTag() {
@@ -154,6 +155,16 @@ import android.app.UiModeManager;
                 return false;
             }
        });
+
+       mPanelBg = (ListPreference) findPreference(PREF_PANEL_BG);
+        int mPanelValue = getOverlayPosition(ThemesUtils.PANEL_BG_STYLE);
+        if (mPanelValue != -1) {
+                mPanelBg.setValue(String.valueOf(mPanelValue + 2));
+        } else {
+                mPanelBg.setValue("1");
+              }
+        mPanelBg.setSummary(mPanelBg.getEntry());
+        mPanelBg.setOnPreferenceChangeListener(this);
 
         mUiModeManager = getContext().getSystemService(UiModeManager.class);
 
@@ -309,6 +320,20 @@ import android.app.UiModeManager;
                  mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
              } catch (RemoteException ignored) {
              }
+            } else if (preference == mPanelBg) {
+                String panelbg = (String) objValue;
+                int panelBgValue = Integer.parseInt(panelbg);
+                mPanelBg.setValue(String.valueOf(panelBgValue));
+                String overlayName = getOverlayName(ThemesUtils.PANEL_BG_STYLE);
+                    if (overlayName != null) {
+                        handleOverlays(overlayName, false, mOverlayService);
+                    }
+                    if (panelBgValue > 1) {
+                        ColtUtils.showSystemUiRestartDialog(getContext());
+                        handleOverlays(ThemesUtils.PANEL_BG_STYLE[panelBgValue -2],
+                                true, mOverlayService);
+                }
+                mPanelBg.setSummary(mPanelBg.getEntry());
         }
         return true;
     }
