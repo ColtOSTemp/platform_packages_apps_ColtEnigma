@@ -53,6 +53,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
     private static final String AMBIENT_LIGHT_REPEAT_COUNT = "ambient_light_repeat_count";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
+    private static final String KEY_CHARGING_LIGHT = "charging_light";
 
     private ColorPickerPreference mEdgeLightColorPreference;
     private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
@@ -60,6 +61,7 @@ public class NotificationSettings extends SettingsPreferenceFragment
     private ListPreference mColorMode;
     private SystemSettingSwitchPreference mNotificationHeader;
     private SystemSettingSwitchPreference mAmbientPref;
+    private Preference mChargingLeds;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -67,6 +69,13 @@ public class NotificationSettings extends SettingsPreferenceFragment
 	ContentResolver resolver = getActivity().getContentResolver();
         addPreferencesFromResource(R.xml.colt_enigma_notifications);
 	PreferenceScreen prefScreen = getPreferenceScreen();
+
+	mChargingLeds = findPreference(KEY_CHARGING_LIGHT);
+        if (mChargingLeds != null
+                && !getResources().getBoolean(
+                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+            prefScreen.removePreference(mChargingLeds);
+        }
 
 	PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
         if (!Utils.isVoiceCapable(getActivity())) {
