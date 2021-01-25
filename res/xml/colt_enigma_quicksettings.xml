@@ -15,6 +15,12 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.colt.enigma.preference.SystemSettingSwitchPreference
+        android:key="qs_show_drag_handle"
+        android:title="@string/qs_show_drag_handle_title"
+        android:summary="@string/qs_show_drag_handle_summary"
+        android:defaultValue="true" />
+
     <com.colt.enigma.preference.SecureSettingListPreference
         android:key="qs_show_brightness_slider"
         android:title="@string/qs_show_brightness_slider_title"

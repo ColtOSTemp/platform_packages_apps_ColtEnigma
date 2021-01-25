@@ -700,4 +700,8 @@
     <string name="qs_bg_use_disco">QS tile disco</string>
     <string name="qs_bg_use_disco_summary">Make your QS Tiles colorful! (Requires systemui restart)</string>
 
+    <!-- QS drag handle -->
+    <string name="qs_show_drag_handle_title">Drag handle</string>
+    <string name="qs_show_drag_handle_summary">Show drag handle below the quick settings panel</string>
+
 </resources>
