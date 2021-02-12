@@ -757,4 +757,12 @@
     <string name="qstile_oos">Oxygen</string>
     <string name="qstile_triangles">Triangle</string>
 
+    <!-- Switch styles -->
+    <string name="switch_style_title">Switch style</string>
+    <string name="switch_default">Default</string>
+    <string name="switch_contained">Contained</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_retro">Retro</string>
+
 </resources>
