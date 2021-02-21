@@ -75,6 +75,9 @@
     <string name="coltos_about_summary">ColtOS ~ We are based on AOSP with some dependency on LOS, enriched with the useful features only from all over the Android development community. We are a small yet efficient team of working professionals and Our main moto is Quality and stability.!!</string>
 
     <!-- General strings -->
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
     <string name="cancel">Cancel</string>
@@ -82,6 +85,13 @@
     <string name="default_string">Default</string>   
     <string name="unit_percent">\u0025</string>
     <string name="custom_string">Custom</string>
+    <string name="profiles_add">Add</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="profile_reset_title">Reset</string>
+    <string name="show_title">Show</string>
+    <string name="stock">Stock</string>
+    <string name="reset_paranoid">Paranoid</string>
+    <string name="reset_android">Android</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
