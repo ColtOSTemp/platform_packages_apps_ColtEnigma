@@ -43,11 +43,11 @@
         android:entryValues="@array/quick_pulldown_values"
         android:defaultValue="1" />
 
-    <com.colt.enigma.preference.SystemSettingSwitchPreference
+<!--    <com.colt.enigma.preference.SystemSettingSwitchPreference
         android:key="quick_settings_vibrate"
         android:title="@string/quick_settings_vibrate_title"
         android:summary="@string/quick_settings_vibrate_summary"
-        android:defaultValue="false"/>
+        android:defaultValue="false"/> -->
 
     <com.colt.enigma.preference.SystemSettingSwitchPreference
         android:key="qs_tile_title_visibility"
