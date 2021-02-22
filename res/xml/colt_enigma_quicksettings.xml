@@ -64,7 +64,6 @@
     <!-- OOS style material dismiss all button for notifications -->
      <com.colt.enigma.preference.SystemSettingSwitchPreference
          android:key="notification_material_dismiss"
-         android:icon="@drawable/ic_notification_clear_all"
          android:title="@string/notification_material_dismiss_button_title"
          android:summary="@string/notification_material_dismiss_button_summary"
          android:defaultValue="false" />
