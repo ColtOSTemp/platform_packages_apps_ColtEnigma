@@ -1155,4 +1155,11 @@
     <string name="switch_retro">Retro</string>
     <string name="switch_oos">OxygenOS 11</string>
     <string name="switch_android12">Android 12</string>
+
+    <!-- QS Header Size -->
+    <string name="header_default">Default</string>
+    <string name="header_large">Large</string>
+    <string name="header_xlarge">Extra Large</string>
+    <string name="header_title">Header sizes</string>
+    <string name="header_dialog_title">Select size</string>
 </resources>

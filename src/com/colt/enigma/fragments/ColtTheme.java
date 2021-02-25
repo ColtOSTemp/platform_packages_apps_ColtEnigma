@@ -19,6 +19,7 @@
 package com.colt.enigma.fragments;
 
 import com.android.internal.logging.nano.MetricsProto;
+import static android.os.UserHandle.USER_SYSTEM;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -64,6 +65,8 @@ import com.android.settingslib.core.lifecycle.Lifecycle;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 import com.colt.enigma.display.QsTileStylePreferenceController;
 import com.colt.enigma.display.SwitchStylePreferenceController;
+import com.android.internal.util.colt.ColtUtils;
+import com.android.internal.util.colt.ThemesUtils;
 
 import com.android.settings.display.FontPickerPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -85,11 +88,15 @@ public class ColtTheme extends DashboardFragment implements
     private static final int MENU_RESET = Menu.FIRST;
     private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
+    private static final String PREF_HD_SIZE = "header_size";
+
     static final int DEFAULT = 0xff1a73e8;
 
+    private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private ColorPickerPreference mThemeColor;
     private ColorPickerPreference mGradientColor;
+    private ListPreference mhdSize;
 
     private IntentFilter mIntentFilter;
     private static FontPickerPreferenceController mFontPickerPreference;
@@ -127,6 +134,7 @@ public class ColtTheme extends DashboardFragment implements
         setupAccentPref();
         setupGradientPref();
         setHasOptionsMenu(true);
+	setupHeaderSwitchPref();
 
         Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
 
@@ -134,6 +142,14 @@ public class ColtTheme extends DashboardFragment implements
 
         if (TextUtils.isEmpty(hasDisplayCutout)) {
             getPreferenceScreen().removePreference(mCutoutPref);
+        }
+    }
+
+    public void handleOverlays(String packagename, Boolean state, IOverlayManager mOverlayManager) {
+        try {
+            mOverlayService.setEnabled(packagename, state, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
         }
     }
 
@@ -178,10 +194,33 @@ public class ColtTheme extends DashboardFragment implements
                  mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
              } catch (RemoteException ignored) {
              }
+        } else if (preference == mhdSize){
+        String hdsize = (String) newValue;
+        final Context context = getContext();
+        switch (hdsize) {
+            case "1":
+            handleOverlays(ThemesUtils.HEADER_LARGE, false, mOverlayManager);
+            handleOverlays(ThemesUtils.HEADER_XLARGE, false, mOverlayManager);
+            break;
+            case "2":
+            handleOverlays(ThemesUtils.HEADER_LARGE, true, mOverlayManager);
+            handleOverlays(ThemesUtils.HEADER_XLARGE, false, mOverlayManager);
+            break;
+            case "3":
+            handleOverlays(ThemesUtils.HEADER_LARGE, false, mOverlayManager);
+            handleOverlays(ThemesUtils.HEADER_XLARGE, true, mOverlayManager);
+            break;
         }
+        try {
+             mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+             mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+             mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+         } catch (RemoteException ignored) {
+         }
         return true;
     }
-
+    return true;
+  }
     private void setupAccentPref() {
         mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
         String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
@@ -256,6 +295,19 @@ public class ColtTheme extends DashboardFragment implements
         final Context context = getActivity();
         context.unregisterReceiver(mIntentReceiver);
         mFontPickerPreference.stopProgress();
+    }
+
+    private void setupHeaderSwitchPref() {
+        mhdSize = (ListPreference) findPreference(PREF_HD_SIZE);
+        mhdSize.setOnPreferenceChangeListener(this);
+        if (ColtUtils.isThemeEnabled("com.android.theme.header.xlarge")){
+            mhdSize.setValue("3");
+        } else if (ColtUtils.isThemeEnabled("com.android.theme.header.large")){
+            mhdSize.setValue("2");
+        }
+        else{
+            mhdSize.setValue("1");
+        }
     }
 
     @Override
