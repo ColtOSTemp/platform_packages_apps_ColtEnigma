@@ -61,13 +61,6 @@
          android:entryValues="@array/qs_datausage_values"
          android:defaultValue="0" />
 
-    <!-- OOS style material dismiss all button for notifications -->
-     <com.colt.enigma.preference.SystemSettingSwitchPreference
-         android:key="notification_material_dismiss"
-         android:title="@string/notification_material_dismiss_button_title"
-         android:summary="@string/notification_material_dismiss_button_summary"
-         android:defaultValue="false" />
-
     <PreferenceCategory
         android:key="qs_columns_rows_category"
         android:title="@string/qs_columns_rows_category_title" >
