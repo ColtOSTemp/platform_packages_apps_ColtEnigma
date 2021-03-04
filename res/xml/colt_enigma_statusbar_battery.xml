@@ -40,13 +40,4 @@
         android:title="@string/qs_battery_percentage_title"
         android:summary="@string/qs_battery_percentage_summary" />
 
-    <com.colt.enigma.preference.SystemSettingListPreference
-        android:key="text_charging_symbol"
-        android:title="@string/text_charging_symbol_title"
-        android:dialogTitle="@string/text_charging_symbol_dialog"
-        android:entries="@array/text_charging_symbol_entries"
-        android:entryValues="@array/text_charging_symbol_values"
-        android:summary="%s"
-        android:defaultValue="0" />
-
 </PreferenceScreen>
