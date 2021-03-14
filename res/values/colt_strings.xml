@@ -886,4 +886,8 @@
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
     <string name="qs_battery_percentage_title">QS battery percentage</string>
     <string name="qs_battery_percentage_summary">Show battery percentage in the QS header instead of battery estimate</string>
+
+    <!-- AOSP Gestures -->
+    <string name="aosp_gestures_title">AOSP Gestures</string>
+    <string name="aosp_gestures_summary">AOSP System Gestures</string>
 </resources>
