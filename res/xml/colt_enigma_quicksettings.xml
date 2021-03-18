@@ -21,7 +21,7 @@
         android:summary="@string/qs_show_drag_handle_summary"
         android:defaultValue="true" />
 
-    <com.colt.enigma.preference.SecureSettingListPreference
+<!--    <com.colt.enigma.preference.SecureSettingListPreference
         android:key="qs_show_brightness_slider"
         android:title="@string/qs_show_brightness_slider_title"
         android:summary="%s"
@@ -34,7 +34,7 @@
         android:key="qs_show_auto_brightness"
         android:title="@string/qs_show_auto_brightness_title"
         android:summary="@string/qs_show_auto_brightness_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true" /> -->
 
     <com.colt.enigma.preference.SecureSettingListPreference 
         android:key="status_bar_quick_qs_pulldown" 
