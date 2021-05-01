@@ -1053,4 +1053,8 @@
     <string name="qs_brightness_slider_bottom">Bottom</string>
     <string name="qs_brightness_slider_top">Top</string>
 
+    <!-- Colored Statusbar Icons -->
+    <string name="statusbar_icons_style">Colored statusbar icons</string>
+    <string name="statusbar_icons_style_summary">Choose the style of your statusbar icons (requires SystemUI restart)</string>
+
 </resources>
