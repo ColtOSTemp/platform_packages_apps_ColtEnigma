@@ -41,7 +41,6 @@ import com.colt.enigma.tabs.Buttons;
 import com.colt.enigma.tabs.Lockscreen;
 import com.colt.enigma.tabs.System;
 
-
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.SettingsPreferenceFragment;
@@ -61,7 +60,7 @@ public class ColtEnigma extends SettingsPreferenceFragment {
         mContext = getActivity();
         View view = inflater.inflate(R.layout.colt, container, false);
 
-        getActivity().setTitle(R.string.coltos_title);
+        getActivity().setTitle(R.string.colt_title);
 
         final BubbleNavigationConstraintView bubbleNavigationConstraintView =  (BubbleNavigationConstraintView) view.findViewById(R.id.bottom_navigation_view_constraint);
         final ViewPager viewPager = view.findViewById(R.id.viewpager);
@@ -145,7 +144,7 @@ public class ColtEnigma extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.COLT;
+        return MetricsProto.MetricsEvent.ENIGMA;
     }
 
     @Override
