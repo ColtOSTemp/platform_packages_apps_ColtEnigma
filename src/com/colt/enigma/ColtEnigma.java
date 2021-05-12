@@ -134,10 +134,10 @@ public class ColtEnigma extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-            getString(R.string.status_bar_tab),
-            getString(R.string.button_title),
-	    getString(R.string.lockscreen_tab),
-            getString(R.string.system_tab)};
+            getString(R.string.bottom_nav_statusbar_title),
+            getString(R.string.bottom_nav_button_title),
+	    getString(R.string.bottom_nav_lockscreen_title),
+            getString(R.string.bottom_nav_system_title)};
 
         return titleString;
     }
