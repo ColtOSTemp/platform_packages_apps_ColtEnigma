@@ -52,7 +52,7 @@
     <string name="colt_telegram_summary"><a href="https://t.me/ColtEnigma">Join ColtOS community here!</a></string>
     <string name="colt_github_title">ColtOS Github</string>
     <string name="colt_github_summary"><a href="https://www.github.com/Colt-Enigma">See the ColtOS source code here!</a></string>
-    <string name="colt_about_info_summary">ColtOS was started by a group of Android enthusiasts and learners lead by Rakesh in early 2017. Initial members were Nitin, Nikhil and Debojit. It was >    <string name="colt_about_team">Team ColtOS</string>
+    <string name="colt_about_info_summary">ColtOS was started by a group of Android enthusiasts and learners lead by Rakesh in early 2017. Initial members were Nitin, Nikhil and Debojit</string>
     <string name="colt_about_team">Team ColtOS</string>
     <string name="colt_about_rakesh" translatable="false">Rakesh Batra</string>
     <string name="colt_about_rakesh_summary" translatable="false">Founder and Lead Developer</string>
