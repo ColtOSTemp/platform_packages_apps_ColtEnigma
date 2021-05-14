@@ -28,9 +28,9 @@ import com.android.internal.util.hwkeys.Config;
 import com.android.internal.util.hwkeys.Config.ActionConfig;
 import com.android.internal.util.hwkeys.Config.ButtonConfig;
 
-import com.xtended.preferences.ShortcutPickHelper;
-import com.xtended.preferences.ActionPreference;
-import com.xtended.preferences.CustomActionListAdapter;
+import com.colt.enigma.preference.ShortcutPickHelper;
+import com.colt.enigma.preference.ActionPreference;
+import com.colt.enigma.preference.CustomActionListAdapter;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -256,6 +256,6 @@ public class ActionFragment extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.XTENSIONS;
+        return MetricsProto.MetricsEvent.ENIGMA;
     }
 }

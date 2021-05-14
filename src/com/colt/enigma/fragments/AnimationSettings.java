@@ -104,7 +104,7 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        addPreferencesFromResource(R.xml.x_settings_animations);
+        addPreferencesFromResource(R.xml.colt_enigma_animations);
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -349,7 +349,7 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.x_settings_animations;
+                    sir.xmlResId = R.xml.colt_enigma_animations;
                     result.add(sir);
                     return result;
                 }

@@ -199,7 +199,7 @@ public class LockscreenUi extends SettingsPreferenceFragment implements
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.x_lockscreen_ui;
+                    sir.xmlResId = R.xml.lockscreen_ui;
                     result.add(sir);
                     return result;
                 }

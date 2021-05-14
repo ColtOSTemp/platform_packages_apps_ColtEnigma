@@ -102,7 +102,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.x_settings_power;
+                    sir.xmlResId = R.xml.colt_enigma_power;
                     result.add(sir);
                     return result;
                 }

@@ -70,7 +70,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mLayoutSettings = findPreference(LAYOUT_SETTINGS);
         mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
 
-        if (!XtendedUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+        if (!ColtUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             prefScreen.removePreference(mLayoutSettings);
         }
             prefScreen.removePreference(mSwapNavButtons);

@@ -33,11 +33,16 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import android.content.SharedPreferences;
 import android.provider.Settings;
 import com.android.settings.R;
+import android.util.Log;
 
 import java.util.Arrays;
 import java.util.HashSet;
