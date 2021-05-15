@@ -26,7 +26,7 @@
     <dimen name="default_icon_size">24dp</dimen>
 
     <!-- Where the category icon will start (from the left) -->
-    <dimen name="owlsnest_cat_icon_image_inset">6dp</dimen>
+    <dimen name="colt_cat_icon_image_inset">6dp</dimen>
 
     <!-- Shortcut picker -->
     <dimen name="shortcut_picker_left_padding">70dip</dimen>
@@ -35,5 +35,4 @@
     <dimen name="fod_picker_item_margin">10dp</dimen>
     <dimen name="fod_picker_item_size">100dp</dimen>
     <dimen name="fod_picker_item_padding">20dp</dimen>
-
 </resources>
