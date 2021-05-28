@@ -20,6 +20,14 @@
            android:key="colt_header_about"
            android:layout="@layout/colt_header_about" />
 
+        <!-- Ambient Decor -->
+        <com.colt.enigma.preference.CategoryColtPreference
+            android:key="ambient_category"
+            android:title="@string/ambient_decor_title"
+            android:summary="@string/ambient_decor_summary"            
+            android:fragment="com.colt.enigma.fragments.AmbientDecorSettings"
+            android:icon="@drawable/ic_animations_background" />
+
 	<!-- Lock Screen -->
 	<com.colt.enigma.preference.CategoryColtPreference
 	    android:key="lockscreen_category"
