@@ -15,6 +15,12 @@
     android:title="@string/lockscreen_ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="lockscreen_colors"
+        android:title="@string/lockscreen_colors"
+        android:summary="@string/lockscreen_colors_summary"
+        android:fragment="com.colt.enigma.fragments.LockColors" />
+
     <PreferenceCategory
         android:title="@string/lock_screen_clock_category_title" />
 
@@ -117,12 +123,6 @@
         settings:units="dp"
         android:defaultValue="21"
         android:persistent="false" />
-
-    <PreferenceScreen
-        android:key="lockscreen_colors"
-        android:title="@string/lockscreen_colors"
-        android:summary="@string/lockscreen_colors_summary"
-        android:fragment="com.colt.enigma.fragments.LockColors" />
 
     <PreferenceCategory
         android:title="@string/lock_screen_items_allignment_category_title"/>

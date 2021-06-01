@@ -34,6 +34,7 @@
         android:title="@string/lockscreen_owner_info_color"
         android:defaultValue="0xffffffff" />
 
+<!--
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="lockscreen_phone_icon_color"
         android:title="@string/lockscreen_phone_icon_color"
@@ -49,7 +50,6 @@
         android:title="@string/lockscreen_indication_text_color"
         android:defaultValue="0xffffffff" />
 
-<!--
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="lock_screen_weather_temp_color"
         android:title="@string/lockscreen_weather_temp_color"
